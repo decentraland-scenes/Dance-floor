@@ -38,7 +38,8 @@ export class changeColor implements ISystem {
       beat.timer = beat.interval
       for (let tile of tiles.entities) {
         const colorNum = Math.floor(Math.random() * colors.length)
-        tile.add(tileMaterials[colorNum])
+        tile.remove(Material)
+        tile.set(tileMaterials[colorNum])
       }
     }
   }
@@ -71,7 +72,7 @@ for (let i = 0; i < colors.length; i ++){
     }))
     tile.add(new TileFlag())
     const colorNum = Math.floor(Math.random() * colors.length)
-    tile.add(tileMaterials[colorNum])
+    tile.set(tileMaterials[colorNum])
     engine.addEntity(tile)
   })
 })
