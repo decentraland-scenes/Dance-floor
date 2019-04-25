@@ -36,7 +36,7 @@ export class changeColor implements ISystem {
       beat.timer = beat.interval
       for (let tile of tiles.entities) {
         const colorNum = Math.floor(Math.random() * colors.length)
-        tile.addComponent(tileMaterials[colorNum])
+        tile.addComponentOrReplace(tileMaterials[colorNum])
       }
     }
   }
@@ -58,14 +58,14 @@ for (let i = 0; i < colors.length; i ++){
 }
 
 // Add Tiles
-[0, 1, 2, 3, 4].forEach(x => {
-  [0, 1, 2, 3, 4].forEach(z => {
+[0, 1, 2, 3].forEach(x => {
+  [0, 1, 2, 3].forEach(z => {
     const tile = new Entity()
     tile.addComponent(new PlaneShape())
     tile.addComponent(new Transform({
-      position: new Vector3((x * 2) + 1, 0, (z * 2) + 1),
+      position: new Vector3((x * 4) + 2, 0, (z * 4) + 2),
       rotation: Quaternion.Euler(90, 0, 0),
-      scale: new Vector3(2, 2, 2)
+      scale: new Vector3(4, 4, 4)
     }))
     tile.addComponent(new TileFlag())
     const colorNum = Math.floor(Math.random() * colors.length)
