@@ -78,7 +78,7 @@ for (let i = 0; i < colors.length; i ++){
 // Add dancing Trevor
 const trevor = new Entity()
 trevor.addComponent(new GLTFShape("models/Trevor.glb"))
-const clipDance = new AnimationClip("Armature_Idle")
+const clipDance = new AnimationState("Armature_Idle")
 const animator = new Animator()
 animator.addClip(clipDance)
 trevor.addComponent(animator)
