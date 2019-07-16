@@ -89,7 +89,7 @@ trevor.addComponent(new Transform({
   scale: new Vector3(1.5, 1.5, 1.5)
 }))
 
-const audioClip = new AudioClip("sounds/Vexento.ogg")
+const audioClip = new AudioClip("sounds/Vexento.mp3")
 audioClip.loop = true
 const audioSource = new AudioSource(audioClip)
 trevor.addComponent(audioSource)
